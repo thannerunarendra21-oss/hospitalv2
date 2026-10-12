@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Narendra Hospital &amp; Medical Research Institute | Healing with Heart</title>
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display for luxurious medical editorial flair -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* CSS Variables & Design System */
+    :root {
+      --primary: #0A3641;
+      --primary-light: #0D5C75;
+      --primary-dark: #052128;
+      --accent-gold: #D4AF37;
+      --accent-gold-light: #F4E8C1;
+      --accent-amber: #E8A838;
+      --bg-cream: #FBFBFD;
+      --card-white: #FFFFFF;
+      --mint-tint: #EAF5F2;
+      --mint-border: #D1EAE4;
+      --text-main: #1F2937;
+      --text-slate: #64748B;
+      --text-muted: #94A3B8;
+      --danger: #EF4444;
+      --danger-light: #FEE2E2;
+      --success: #10B981;
+      --success-light: #D1FAE5;
+      --shadow-sm: 0 4px 6px -1px rgba(10, 54, 65, 0.05), 0 2px 4px -2px rgba(10, 54, 65, 0.05);
+      --shadow-md: 0 10px 15px -3px rgba(10, 54, 65, 0.08), 0 4px 6px -4px rgba(10, 54, 65, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(10, 54, 65, 0.1), 0 8px 10px -6px rgba(10, 54, 65, 0.04);
+      --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Headings font styling */
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Top Emergency Header Bar */
+    .emergency-topbar {
+      background: var(--primary-dark);
+      color: #E2E8F0;
+      font-size: 0.85rem;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .emergency-topbar a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .emergency-pulse-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #FECACA;
+      padding: 2px 10px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.75rem;
+      animation: pulseAlert 2s infinite;
+    }
+    @keyframes pulseAlert {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(0.98); }
+    }
+
+    .header-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 4px 20px rgba(10, 54, 65, 0.06);
+      transition: var(--transition);
+    }
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .logo-emblem {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-size: 1.3rem;
+      box-shadow: 0 6px 14px rgba(10, 54, 65, 0.25);
+      position: relative;
+    }
+    .logo-emblem::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--accent-gold);
+      border: 2px solid white;
+      border-radius: 50%;
+      top: -2px;
+      right: -2px;
+    }
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+    .brand-subtitle {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--text-slate);
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-light);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #C49B27 100%);
+      color: #1A1A1A;
+      font-weight: 700;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+      transition: var(--transition);
+      cursor: pointer;
+      font-size: 0.88rem;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+    }
+    .btn-outline-teal {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-outline-teal:hover {
+      background: var(--primary);
+      color: #FFF;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .hero-section {
+      position: relative;
+      background: radial-gradient(circle at 10% 20%, #F3FAF8 0%, #FBFBFD 80%);
+      padding: 4.5rem 2rem 3rem;
+      overflow: hidden;
+      border-bottom: 1px solid var(--mint-border);
+    }
+    .hero-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--mint-tint);
+      border: 1px solid var(--mint-border);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.18;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title span {
+      color: var(--primary-light);
+      font-style: italic;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-slate);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .hero-visual-card {
+      background: var(--card-white);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(13, 92, 117, 0.08);
+      position: relative;
+    }
+    .hero-suite-img {
+      width: 100%;
+      height: 240px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #10414D 0%, #1A5F71 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-suite-img::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 10 L40 30 L60 30 L45 42 L50 60 L30 48 L10 60 L15 42 L0 30 L20 30 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+      background-size: 90px;
+    }
+    .concierge-chip {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-card-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .hero-mini-box {
+      background: var(--mint-tint);
+      border-radius: var(--radius-md);
+      padding: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-mini-box i {
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+    .hero-mini-box span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-slate);
+      font-weight: 500;
+    }
+    .hero-mini-box strong {
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+    }
+
+    .stats-strip {
+      background: var(--card-white);
+      box-shadow: var(--shadow-md);
+      padding: 2.2rem 2rem;
+      border-top: 1px solid #EEF2F6;
+      border-bottom: 1px solid #EEF2F6;
+    }
+    .stats-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .stat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--mint-tint);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .stat-val {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-slate);
+      font-weight: 500;
+    }
+
+    .section-wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.5rem;
+    }
+    .section-sub {
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--text-slate);
+      font-size: 1rem;
+    }
+
+    /* Hospitality Suites Grid */
+    .suites-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .suite-card {
+      background: var(--card-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid #EDF2F7;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .suite-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--mint-border);
+    }
+    .suite-card-media {
+      height: 190px;
+      background: var(--primary);
+      position: relative;
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+      overflow: hidden;
+    }
+    .suite-card-media i.bg-icon {
+      position: absolute;
+      right: -15px;
+      top: -15px;
+      font-size: 7rem;
+      color: rgba(255,255,255,0.06);
+    }
+    .suite-card-body {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .suite-card-body h3 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+    .suite-amenities {
+      list-style: none;
+      margin: 1.2rem 0;
+      flex-grow: 1;
+    }
+    .suite-amenities li {
+      font-size: 0.88rem;
+      color: var(--text-slate);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .suite-amenities li i {
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      background: var(--card-white);
+      border: 1px solid #E2E8F0;
+      padding: 0.55rem 1.3rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-slate);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(10, 54, 65, 0.2);
+    }
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+    .doctor-card {
+      background: var(--card-white);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      border: 1px solid #E2E8F0;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .doctor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--mint-border);
+    }
+    .doctor-avatar-box {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--mint-tint), #CBE7DF);
+      color: var(--primary);
+      font-size: 1.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+    .status-dot {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      background: var(--success);
+      border: 2.5px solid white;
+      border-radius: 50%;
+      bottom: 2px;
+      right: 2px;
+    }
+    .doctor-badge-dept {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--mint-tint);
+      color: var(--primary-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+    }
+    .doc-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .doc-title {
+      font-size: 0.82rem;
+      color: var(--accent-amber);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .doc-meta {
+      font-size: 0.82rem;
+      color: var(--text-slate);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .booking-wrapper {
+      background: var(--card-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(13, 92, 117, 0.08);
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      overflow: hidden;
+    }
+    .booking-sidebar {
+      background: linear-gradient(145deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .booking-sidebar::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 140px;
+      background: radial-gradient(circle at 50% 100%, rgba(212,175,55,0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .booking-form-area {
+      padding: 3rem;
+    }
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.4rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      font-size: 0.92rem;
+      color: var(--text-main);
+      background: #FAFAFC;
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--primary-light);
+      background: #FFF;
+      box-shadow: 0 0 0 3px rgba(13, 92, 117, 0.12);
+    }
+    .slot-chips-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .slot-chip {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text-slate);
+    }
+    .slot-chip:hover {
+      border-color: var(--primary-light);
+    }
+    .slot-chip.selected {
+      background: var(--primary-light);
+      color: white;
+      border-color: var(--primary-light);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 54, 65, 0.65);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-card {
+      background: var(--card-white);
+      width: 100%;
+      max-width: 520px;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+      position: relative;
+      animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: #F1F5F9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-slate);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .modal-close-btn:hover {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+    .auth-toggle-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #EEF2F6;
+      padding: 4px;
+      border-radius: var(--radius-pill);
+      margin: 1.5rem 0;
+    }
+    .auth-toggle-bar button {
+      padding: 0.65rem 0.5rem;
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-slate);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .auth-toggle-bar button.active {
+      background: var(--card-white);
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .input-icon-wrap {
+      position: relative;
+    }
+    .input-icon-wrap input {
+      padding-right: 2.8rem;
+    }
+    .input-icon-wrap .eye-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px;
+    }
+    .demo-credentials-box {
+      background: var(--mint-tint);
+      border: 1px dashed var(--mint-border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem;
+      margin: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-text {
+      font-size: 0.76rem;
+      color: var(--primary);
+      line-height: 1.4;
+    }
+    .btn-demo-fill {
+      background: var(--primary-light);
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-demo-fill:hover {
+      background: var(--primary);
+    }
+
+    .dashboard-view {
+      display: none;
+      min-height: calc(100vh - 120px);
+      background: #F4F7F9;
+      padding: 2.5rem 2rem 5rem;
+    }
+    .dashboard-view.active {
+      display: block;
+    }
+    .dashboard-container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .dashboard-top-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+    .dash-kpis-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.2rem;
+    }
+    .kpi-card {
+      background: var(--card-white);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      border: 1px solid #E2E8F0;
+      box-shadow: var(--shadow-sm);
+    }
+    .kpi-card-header {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-slate);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .kpi-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .kpi-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Dashboard Data Cards */
+    .dash-card {
+      background: var(--card-white);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      border: 1px solid #E2E8F0;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+    .dash-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #EDF2F7;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .custom-table th {
+      background: #F8FAFC;
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-slate);
+      border-bottom: 2px solid #E2E8F0;
+    }
+    .custom-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #EDF2F7;
+      font-size: 0.88rem;
+    }
+    .badge-status {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge-status.confirmed { background: var(--success-light); color: var(--success); }
+    .badge-status.completed { background: #E0E7FF; color: #4338CA; }
+    .badge-status.cancelled { background: var(--danger-light); color: var(--danger); }
+
+    /* Concierge request item */
+    .concierge-service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .service-action-box {
+      border: 1.5px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      background: #FAFAFC;
+    }
+    .service-action-box:hover {
+      border-color: var(--accent-gold);
+      background: white;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+    .service-action-box i {
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .toast-container {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .toast-item {
+      background: var(--primary-dark);
+      color: white;
+      padding: 1rem 1.4rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      border-left: 4px solid var(--accent-gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 300px;
+      animation: slideInToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideInToast {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    .shake-error {
+      animation: shakeForm 0.4s ease-in-out;
+    }
+    @keyframes shakeForm {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #94A3B8;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-col h4 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+    .footer-col ul a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .footer-col ul a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .hero-container { grid-template-columns: 1fr; }
+      .booking-wrapper { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .suites-grid { grid-template-columns: 1fr; }
+      .dash-kpis-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .emergency-topbar { flex-direction: column; gap: 4px; text-align: center; }
+      .nav-links { display: none; }
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-lg);
+      }
+      .mobile-menu-btn { display: block; }
+      .hero-title { font-size: 2.3rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .dash-kpis-grid { grid-template-columns: 1fr; }
+      .concierge-service-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 24/7 Hotline Top Banner -->
+  <header class="emergency-topbar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="emergency-pulse-chip"><i class="fa-solid fa-heart-pulse"></i> 24/7 Trauma Care Active</span>
+      <span>National NABH &amp; JCI Accredited Super Specialty Hospital</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <span><i class="fa-solid fa-phone-volume"></i> Emergency: <a href="tel:1800999000">1800-999-000</a></span>
+      <span style="opacity: 0.3;">|</span>
+      <span><i class="fa-solid fa-bell-concierge" style="color: var(--accent-gold);"></i> VIP Concierge: +91 (80) 4567-8900</span>
+    </div>
+  </header>
+
+  <!-- Sticky Main Navbar -->
+  <nav class="header-nav" id="mainHeader">
+    <div class="nav-container">
+      <a class="logo-wrapper" onclick="app.showPublicView()">
+        <div class="logo-emblem">
+          <i class="fa-solid fa-hospital-user"></i>
+        </div>
+        <div>
+          <div class="brand-title">NARENDRA HOSPITAL</div>
+          <div class="brand-subtitle">Health &bull; Research &bull; Hospitality</div>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a onclick="app.scrollToSection('homeHero')" class="active">Home</a></li>
+        <li><a onclick="app.scrollToSection('suitesSection')">Suites &amp; Amenities</a></li>
+        <li><a onclick="app.scrollToSection('specialtiesSection')">Specialists</a></li>
+        <li><a onclick="app.scrollToSection('bookingSection')">Book Appointment</a></li>
+        <li id="authNavContainer">
+          <button class="btn-outline-teal" onclick="app.openAuthModal('patient')">
+            <i class="fa-regular fa-circle-user"></i> Portal Login
+          </button>
+        </li>
+      </ul>
+
+      <button class="mobile-menu-btn" onclick="app.toggleMobileMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Toast Notification Holder -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <main id="publicViewContainer">
+    <!-- Hero Showcase Section -->
+    <section class="hero-section" id="homeHero">
+      <div class="hero-container">
+        <div>
+          <div class="hero-badge">
+            <i class="fa-solid fa-gem" style="color: var(--accent-amber);"></i> 5-Star Clinical Hospitality Excellence
+          </div>
+          <h1 class="hero-title">Healing with Heart, <span>Comfort with Dignity.</span></h1>
+          <p class="hero-desc">
+            Experience international standard healthcare harmonized with tailored luxury care. At Narendra Hospital, our quaternary super-specialists, private botanical recovery gardens, and dedicated patient concierge redefine what a hospital can be.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-gold" onclick="app.scrollToSection('bookingSection')">
+              <i class="fa-solid fa-calendar-check"></i> Book an Appointment
+            </button>
+            <button class="btn-outline-teal" onclick="app.scrollToSection('specialtiesSection')">
+              <i class="fa-solid fa-user-doctor"></i> Find a Specialist
+            </button>
+            <a href="tel:1800999000" class="btn-outline-teal" style="border-color: #EF4444; color: #DC2626;">
+              <i class="fa-solid fa-truck-medical"></i> Instant Emergency
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Card Virtual Preview -->
+        <div class="hero-visual-card">
+          <div class="hero-suite-img">
+            <div class="concierge-chip"><i class="fa-solid fa-star" style="color: #D4AF37;"></i> Presidential Suite</div>
+            <h3 style="font-size: 1.4rem; font-weight: 700; z-index: 2;">A New Standard of Healing</h3>
+            <p style="font-size: 0.85rem; opacity: 0.9; z-index: 2;">HEPA-filtered climate suites, gourmet nutrition lounge, and round-the-clock attendants.</p>
+          </div>
+          <div class="hero-card-footer">
+            <div class="hero-mini-box">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <span>NABH &amp; JCI</span>
+                <strong>Zero Infection Zone</strong>
+              </div>
+            </div>
+            <div class="hero-mini-box">
+              <i class="fa-solid fa-utensils" style="color: var(--accent-amber);"></i>
+              <div>
+                <span>Culinary Healing</span>
+                <strong>Chef-Crafted Diets</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-time Hospital Live Stats Strip -->
+    <section class="stats-strip">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-bed-pulse"></i></div>
+          <div>
+            <div class="stat-val">500+</div>
+            <div class="stat-label">Smart High-Dependency Beds</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+          <div>
+            <div class="stat-val">42+</div>
+            <div class="stat-label">Super-Specialist Surgeons</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <div class="stat-val">24/7</div>
+            <div class="stat-label">Critical Cardiac &amp; Stroke Care</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-star-half-stroke" style="color: var(--accent-amber);"></i></div>
+          <div>
+            <div class="stat-val">99.4%</div>
+            <div class="stat-label">Patient Experience Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap" id="suitesSection">
+      <div class="section-header">
+        <div class="section-sub">Hospitality in Healing</div>
+        <h2 class="section-title">Patient Care Suites &amp; Concierge Amenities</h2>
+        <p class="section-desc">Medical precision paired with soothing residential warmth. We craft an anxiety-free environment engineered for rapid physiological and emotional rejuvenation.</p>
+      </div>
+
+      <div class="suites-grid">
+        <!-- Suite 1 -->
+        <div class="suite-card">
+          <div class="suite-card-media" style="background: linear-gradient(135deg, #0A3641 0%, #154D5C 100%);">
+            <i class="fa-solid fa-hotel bg-icon"></i>
+            <div>
+              <span style="background: var(--accent-gold); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">PREMIUM CARE</span>
+              <h4 style="font-size: 1.3rem; margin-top: 4px;">Presidential Recovery Suites</h4>
+            </div>
+          </div>
+          <div class="suite-card-body">
+            <p style="font-size: 0.9rem; color: var(--text-slate);">An ultra-private two-room sanctuary with independent attendant living quarters, ergonomic medical recliner, and tranquil park views.</p>
+            <ul class="suite-amenities">
+              <li><i class="fa-solid fa-check"></i> 1:1 Dedicated Certified Clinical Attendant</li>
+              <li><i class="fa-solid fa-check"></i> Smart Tablet for Room Automation &amp; Lighting</li>
+              <li><i class="fa-solid fa-check"></i> En-suite Italian Marble Hydro-Therapy Bath</li>
+            </ul>
+            <button class="btn-outline-teal" onclick="app.requestSuiteTour('Presidential Suite')">
+              <i class="fa-solid fa-eye"></i> Inquire Suite Availability
+            </button>
+          </div>
+        </div>
+
+        <!-- Suite 2 -->
+        <div class="suite-card">
+          <div class="suite-card-media" style="background: linear-gradient(135deg, #0D5C75 0%, #207D9B 100%);">
+            <i class="fa-solid fa-utensils bg-icon"></i>
+            <div>
+              <span style="background: var(--accent-gold); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">NUTRITION LOUNGE</span>
+              <h4 style="font-size: 1.3rem; margin-top: 4px;">Therapeutic Culinary Dining</h4>
+            </div>
+          </div>
+          <div class="suite-card-body">
+            <p style="font-size: 0.9rem; color: var(--text-slate);">Every meal is formulated by senior clinical dieticians and prepared fresh by hospital executive chefs to accelerate immune recovery.</p>
+            <ul class="suite-amenities">
+              <li><i class="fa-solid fa-check"></i> Low-Sodium, Diabetic, &amp; Post-Surgical Menus</li>
+              <li><i class="fa-solid fa-check"></i> Family Guest Dining Lounge with Fresh Juices</li>
+              <li><i class="fa-solid fa-check"></i> Organic Sourced Micronutrient-Dense Meals</li>
+            </ul>
+            <button class="btn-outline-teal" onclick="app.requestSuiteTour('Culinary Lounge')">
+              <i class="fa-solid fa-book-open"></i> View Nutrition Protocol
+            </button>
+          </div>
+        </div>
+
+        <!-- Suite 3 -->
+        <div class="suite-card">
+          <div class="suite-card-media" style="background: linear-gradient(135deg, #134E5E 0%, #297486 100%);">
+            <i class="fa-solid fa-plane-arrival bg-icon"></i>
+            <div>
+              <span style="background: var(--accent-gold); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">GLOBAL DESK</span>
+              <h4 style="font-size: 1.3rem; margin-top: 4px;">VIP Concierge &amp; Travel Lounge</h4>
+            </div>
+          </div>
+          <div class="suite-card-body">
+            <p style="font-size: 0.9rem; color: var(--text-slate);">Effortless medical tourism facilitation including airport chauffeur service, visa assistance, translator lounges, and express admissions.</p>
+            <ul class="suite-amenities">
+              <li><i class="fa-solid fa-check"></i> Dedicated Patient Relationship Executive</li>
+              <li><i class="fa-solid fa-check"></i> Multi-lingual Medical Translation Support</li>
+              <li><i class="fa-solid fa-check"></i> Post-Discharge Tele-Consult Coordination</li>
+            </ul>
+            <button class="btn-outline-teal" onclick="app.requestSuiteTour('VIP Concierge')">
+              <i class="fa-solid fa-headset"></i> Connect with Concierge
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap" id="specialtiesSection" style="background: #F8FAFB; border-radius: var(--radius-lg); margin-bottom: 4rem;">
+      <div class="section-header">
+        <div class="section-sub">World-Class Faculty</div>
+        <h2 class="section-title">Our Super-Specialist Doctors</h2>
+        <p class="section-desc">Leaders in surgical innovations, diagnostic accuracy, and empathetic clinical care.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar" id="deptFilterContainer">
+        <button class="filter-btn active" onclick="app.filterDoctors('All')">All Specialties</button>
+        <button class="filter-btn" onclick="app.filterDoctors('Cardiology')">Cardiology</button>
+        <button class="filter-btn" onclick="app.filterDoctors('Neurology')">Neurology</button>
+        <button class="filter-btn" onclick="app.filterDoctors('Orthopedics')">Orthopedics</button>
+        <button class="filter-btn" onclick="app.filterDoctors('Pediatrics')">Pediatrics</button>
+        <button class="filter-btn" onclick="app.filterDoctors('Oncology')">Oncology</button>
+      </div>
+
+      <!-- Doctors Grid -->
+      <div class="doctors-grid" id="doctorsContainer">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </section>
+
+    <section class="section-wrap" id="bookingSection">
+      <div class="section-header">
+        <div class="section-sub">Direct Medical Scheduling</div>
+        <h2 class="section-title">Schedule Your Consultation</h2>
+        <p class="section-desc">Book your priority outpatient appointment or video consultation in under two minutes with automated confirmation.</p>
+      </div>
+
+      <div class="booking-wrapper">
+        <div class="booking-sidebar">
+          <div>
+            <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); font-weight: 700;">Instant Priority</div>
+            <h3 style="font-size: 2rem; margin: 0.8rem 0 1.2rem; line-height: 1.2;">Patient First Care Guarantee</h3>
+            <p style="opacity: 0.85; font-size: 0.95rem; line-height: 1.7;">
+              Appointments booked online receive priority slot reservation and contactless desk check-in. If you need special physical mobility assistance or an interpreter, please let us know.
+            </p>
+          </div>
+          <div style="margin-top: 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+              <i class="fa-solid fa-clock-rotate-left" style="color: var(--accent-gold); font-size: 1.3rem;"></i>
+              <div>
+                <strong style="display: block; font-size: 0.95rem;">Average OPD Wait Time</strong>
+                <span style="font-size: 0.8rem; opacity: 0.8;">Less than 12 minutes</span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <i class="fa-solid fa-file-shield" style="color: var(--accent-gold); font-size: 1.3rem;"></i>
+              <div>
+                <strong style="display: block; font-size: 0.95rem;">Digital Health Dossier</strong>
+                <span style="font-size: 0.8rem; opacity: 0.8;">Synced directly to patient portal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-form-area">
+          <form id="appointmentForm" onsubmit="app.handleBookingSubmit(event)">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" id="bookPatientName" class="form-control" placeholder="e.g. Ramesh Chandra" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" id="bookPatientPhone" class="form-control" placeholder="+91 98765 43210" required />
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Select Department *</label>
+                <select id="bookDeptSelect" class="form-control" onchange="app.onBookingDeptChange()" required>
+                  <option value="">-- Choose Department --</option>
+                  <option value="Cardiology">Cardiology &amp; Cardiac Surgery</option>
+                  <option value="Neurology">Neurology &amp; Neurosurgery</option>
+                  <option value="Orthopedics">Orthopedics &amp; Joint Replacement</option>
+                  <option value="Pediatrics">Pediatrics &amp; Child Health</option>
+                  <option value="Oncology">Oncology &amp; Radiation Care</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Preferred Doctor *</label>
+                <select id="bookDoctorSelect" class="form-control" required>
+                  <option value="">-- Select Specialist --</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Preferred Date *</label>
+                <input type="date" id="bookDate" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Consultation Mode *</label>
+                <select id="bookMode" class="form-control" required>
+                  <option value="In-Person Hospital Visit">In-Person Hospital Visit</option>
+                  <option value="VIP In-Suite Visit">VIP In-Suite OPD Visit</option>
+                  <option value="Secure Video Consultation">Secure Video Tele-Consult</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Available Consultation Slot *</label>
+              <div class="slot-chips-group" id="slotChipsContainer">
+                <div class="slot-chip selected" onclick="app.selectSlotChip(this)">09:30 AM</div>
+                <div class="slot-chip" onclick="app.selectSlotChip(this)">11:15 AM</div>
+                <div class="slot-chip" onclick="app.selectSlotChip(this)">02:00 PM</div>
+                <div class="slot-chip" onclick="app.selectSlotChip(this)">04:30 PM</div>
+                <div class="slot-chip" onclick="app.selectSlotChip(this)">06:00 PM</div>
+              </div>
+              <input type="hidden" id="selectedSlotVal" value="09:30 AM" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Medical Concerns / Notes (Optional)</label>
+              <textarea id="bookNotes" class="form-control" rows="2" placeholder="Briefly describe symptoms or prior reports..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 0.9rem; font-size: 1rem;">
+              <i class="fa-solid fa-calendar-check"></i> Confirm Appointment Slot
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="dashboard-view" id="patientDashboard">
+    <div class="dashboard-container">
+      <div class="dashboard-top-card">
+        <div>
+          <div style="font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">
+            <i class="fa-solid fa-circle-check"></i> Patient Wellness Portal
+          </div>
+          <h2 style="font-size: 2rem; margin: 0.4rem 0;" id="patientWelcomeText">Welcome back, Guest</h2>
+          <p style="opacity: 0.85; font-size: 0.9rem;" id="patientMetaSubtitle">Patient UHID: NH-P-77401 &bull; Blood Group: O+ &bull; Deluxe Ward 408</p>
+        </div>
+        <button class="btn-gold" onclick="app.logoutUser()" style="background: white; color: var(--primary);">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+        </button>
+      </div>
+
+      <!-- Quick Concierge Requests -->
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <div>
+            <h3 style="color: var(--primary); font-size: 1.3rem;">Hospitality &amp; Care Concierge</h3>
+            <span style="font-size: 0.82rem; color: var(--text-slate);">One-touch requests dispatched instantly to on-duty nurse stations</span>
+          </div>
+        </div>
+        <div class="concierge-service-grid">
+          <div class="service-action-box" onclick="app.triggerConciergeRequest('Dedicated Nurse Call requested to Room 408')">
+            <i class="fa-solid fa-bell"></i>
+            <h4 style="font-size: 0.95rem; color: var(--primary); margin-bottom: 4px;">Assisted Nurse Call</h4>
+            <p style="font-size: 0.78rem; color: var(--text-slate);">Prompt response in &lt; 2 minutes</p>
+          </div>
+          <div class="service-action-box" onclick="app.triggerConciergeRequest('Clinical Dietitian consultation requested')">
+            <i class="fa-solid fa-carrot"></i>
+            <h4 style="font-size: 0.95rem; color: var(--primary); margin-bottom: 4px;">Custom Meal Modification</h4>
+            <p style="font-size: 0.78rem; color: var(--text-slate);">Chef-tailored dietary update</p>
+          </div>
+          <div class="service-action-box" onclick="app.triggerConciergeRequest('VIP Linen and Attendant kit dispatched')">
+            <i class="fa-solid fa-spa"></i>
+            <h4 style="font-size: 0.95rem; color: var(--primary); margin-bottom: 4px;">Suite Amenities Restock</h4>
+            <p style="font-size: 0.78rem; color: var(--text-slate);">Fresh linen &amp; herbal toiletry set</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patient Upcoming Appointments -->
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <h3 style="color: var(--primary); font-size: 1.3rem;"><i class="fa-regular fa-calendar-days" style="color: var(--accent-gold);"></i> My Scheduled Appointments</h3>
+          <button class="btn-outline-teal" onclick="app.scrollToSection('bookingSection'); app.showPublicView();">
+            <i class="fa-solid fa-plus"></i> Book Another Slot
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Department &amp; Doctor</th>
+                <th>Scheduled Date &amp; Slot</th>
+                <th>Mode</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="patientAppointmentsTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Patient Medical Records / Lab Reports -->
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <h3 style="color: var(--primary); font-size: 1.3rem;"><i class="fa-solid fa-file-waveform" style="color: var(--primary-light);"></i> Digital Diagnostic Records</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Encrypted Medical Dossier</span>
+        </div>
+        <div class="table-responsive">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Report Name</th>
+                <th>Date Tested</th>
+                <th>Department / Lab</th>
+                <th>Clinical Finding</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Comprehensive Lipid Profile</strong></td>
+                <td>08 Oct 2026</td>
+                <td>Cardiology Lab</td>
+                <td><span style="color: var(--success); font-weight: 600;"><i class="fa-solid fa-check"></i> Normal (HDL: 54 mg/dL)</span></td>
+                <td><button class="btn-outline-teal" style="padding: 4px 10px; font-size: 0.76rem;" onclick="app.viewDummyReport('Lipid Profile')"><i class="fa-solid fa-download"></i> View PDF</button></td>
+              </tr>
+              <tr>
+                <td><strong>Cardiac 2D Echocardiogram</strong></td>
+                <td>04 Oct 2026</td>
+                <td>Non-Invasive Diagnostics</td>
+                <td><span style="color: var(--primary-light); font-weight: 600;">LVEF 62% - Healthy Function</span></td>
+                <td><button class="btn-outline-teal" style="padding: 4px 10px; font-size: 0.76rem;" onclick="app.viewDummyReport('2D Echo')"><i class="fa-solid fa-download"></i> View PDF</button></td>
+              </tr>
+              <tr>
+                <td><strong>Glycated Hemoglobin (HbA1c)</strong></td>
+                <td>28 Sep 2026</td>
+                <td>Biochemistry Wing</td>
+                <td><span style="color: var(--accent-amber); font-weight: 600;">5.7% (Pre-diabetic monitored)</span></td>
+                <td><button class="btn-outline-teal" style="padding: 4px 10px; font-size: 0.76rem;" onclick="app.viewDummyReport('HbA1c Report')"><i class="fa-solid fa-download"></i> View PDF</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-view" id="adminDashboard">
+    <div class="dashboard-container">
+      <div class="dashboard-top-card" style="background: linear-gradient(135deg, #07252C 0%, #0F4959 100%);">
+        <div>
+          <div style="font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">
+            <i class="fa-solid fa-hospital"></i> Executive Staff &amp; Clinical Command Center
+          </div>
+          <h2 style="font-size: 2rem; margin: 0.4rem 0;">Hospital Operational Dashboard</h2>
+          <p style="opacity: 0.85; font-size: 0.9rem;">Authenticated: Dr. A. V. Rao (Chief Medical Superintendent)</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn-gold" onclick="app.openAdmitModal()">
+            <i class="fa-solid fa-bed"></i> Fast-Track Admit
+          </button>
+          <button class="btn-gold" onclick="app.logoutUser()" style="background: white; color: var(--primary);">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Clinical KPIs -->
+      <div class="dash-kpis-grid">
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span>REGISTERED PATIENTS</span>
+            <i class="fa-solid fa-users-medical" style="color: var(--primary);"></i>
+          </div>
+          <div class="kpi-val" id="kpiTotalPatients">1,842</div>
+          <div class="kpi-sub"><span style="color: var(--success); font-weight: 700;">+24</span> registered today</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span>TODAY'S APPOINTMENTS</span>
+            <i class="fa-solid fa-calendar-check" style="color: var(--accent-amber);"></i>
+          </div>
+          <div class="kpi-val" id="kpiAppointmentsCount">18</div>
+          <div class="kpi-sub">Across 5 departments</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span>BED OCCUPANCY</span>
+            <i class="fa-solid fa-bed-pulse" style="color: #3B82F6;"></i>
+          </div>
+          <div class="kpi-val" id="kpiBedOccupancy">84%</div>
+          <div class="kpi-sub"><strong id="kpiBedsFreeCount">78</strong> beds vacant (ICU &amp; Deluxe)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span>ON-DUTY SURGEONS</span>
+            <i class="fa-solid fa-user-doctor" style="color: var(--success);"></i>
+          </div>
+          <div class="kpi-val">28 / 42</div>
+          <div class="kpi-sub">Active in OT &amp; Emergency</div>
+        </div>
+      </div>
+
+      <!-- Live Appointments Table Management -->
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <div>
+            <h3 style="color: var(--primary); font-size: 1.3rem;">Master Appointment Control</h3>
+            <span style="font-size: 0.82rem; color: var(--text-slate);">Manage real-time bookings, update consultation stages, or reschedule slots</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" id="adminSearchInput" onkeyup="app.filterAdminTable()" class="form-control" placeholder="Search patient, doctor, ID..." style="width: 250px; padding: 0.4rem 0.8rem; font-size: 0.84rem;" />
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="custom-table" id="adminTable">
+            <thead>
+              <tr>
+                <th>Appt ID</th>
+                <th>Patient Details</th>
+                <th>Doctor &amp; Specialty</th>
+                <th>Slot Time</th>
+                <th>Status</th>
+                <th>Manage Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminAppointmentsTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Emergency Bed & Facility Tracker -->
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <h3 style="color: var(--primary); font-size: 1.3rem;"><i class="fa-solid fa-hospital-symbol" style="color: var(--danger);"></i> Ward &amp; Suite Allocation Tracker</h3>
+          <span style="font-size: 0.85rem; color: var(--text-slate);">Real-time Telemetry &amp; Bed Availability</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;" id="bedCardsContainer">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="app.closeAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <div class="logo-emblem" style="margin: 0 auto 0.8rem; width: 48px; height: 48px;">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3 style="font-size: 1.6rem; color: var(--primary);" id="authModalHeader">Access Portal</h3>
+        <p style="font-size: 0.85rem; color: var(--text-slate);">Secure HIPAA &amp; NABH-compliant access gate</p>
+      </div>
+
+      <!-- Segmented Portal Switcher -->
+      <div class="auth-toggle-bar">
+        <button id="toggleBtnPatient" class="active" onclick="app.switchAuthMode('patient')">
+          <i class="fa-regular fa-user"></i> Patient Portal
+        </button>
+        <button id="toggleBtnAdmin" onclick="app.switchAuthMode('admin')">
+          <i class="fa-solid fa-user-shield"></i> Staff / Admin
+        </button>
+      </div>
+
+      <!-- 1-Click Demo Fill Box -->
+      <div class="demo-credentials-box">
+        <div class="demo-text">
+          <strong id="demoRoleName">Patient Demo Account:</strong><br>
+          <span id="demoCredText">patient@narendra.com / patient123</span>
+        </div>
+        <button type="button" class="btn-demo-fill" onclick="app.fillDemoCredentials()">
+          <i class="fa-solid fa-bolt"></i> Auto-Fill
+        </button>
+      </div>
+
+      <form id="authForm" onsubmit="app.handleAuthSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Authorized Email Address *</label>
+          <input type="email" id="authEmail" class="form-control" placeholder="name@domain.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password *</label>
+          <div class="input-icon-wrap">
+            <input type="password" id="authPassword" class="form-control" placeholder="Enter password" required />
+            <button type="button" class="eye-btn" onclick="app.togglePasswordVisibility('authPassword', this)">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 0.95rem; margin-top: 0.5rem;">
+          <i class="fa-solid fa-right-to-bracket"></i> Secure Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admit Patient Modal for Admin -->
+  <div class="modal-overlay" id="admitModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="app.closeAdmitModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.4rem;">Emergency / Inpatient Admission</h3>
+      <p style="font-size: 0.82rem; color: var(--text-slate); margin-bottom: 1.2rem;">Assign room bed instantly</p>
+      
+      <form onsubmit="app.handleAdmitPatientSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Patient Full Name</label>
+          <input type="text" id="admitName" class="form-control" placeholder="e.g. Anand Murthy" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Attending Doctor</label>
+          <input type="text" id="admitDoctor" class="form-control" placeholder="e.g. Dr. K. Narendra" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Ward / Bed Category</label>
+          <select id="admitCategory" class="form-control" required>
+            <option value="Presidential Suite">Presidential Suite (Floor 7)</option>
+            <option value="Deluxe Room">Deluxe Single Ward (Floor 4)</option>
+            <option value="ICU Bed">Cardiac Intensive Care (ICU - Floor 2)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 0.8rem;">
+          Confirm Inpatient Admission
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="logo-wrapper" style="margin-bottom: 1.2rem;">
+          <div class="logo-emblem"><i class="fa-solid fa-hospital-user"></i></div>
+          <div>
+            <div class="brand-title" style="color: white;">NARENDRA HOSPITAL</div>
+            <div class="brand-subtitle" style="color: var(--accent-gold);">Healing with Heart, Comfort with Dignity</div>
+          </div>
+        </div>
+        <p style="font-size: 0.88rem; line-height: 1.7; max-width: 360px;">
+          Narendra Hospital is an internationally accredited research and tertiary healthcare facility dedicated to super-specialty clinical precision and empathetic guest care.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Specialties</h4>
+        <ul>
+          <li><a onclick="app.filterDoctors('Cardiology')">Interventional Cardiology</a></li>
+          <li><a onclick="app.filterDoctors('Neurology')">Neuro &amp; Spine Surgery</a></li>
+          <li><a onclick="app.filterDoctors('Orthopedics')">Robotic Joint Replacement</a></li>
+          <li><a onclick="app.filterDoctors('Pediatrics')">Neonatal &amp; Pediatric ICU</a></li>
+          <li><a onclick="app.filterDoctors('Oncology')">Precision Oncology</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hospitality</h4>
+        <ul>
+          <li><a onclick="app.scrollToSection('suitesSection')">Presidential Suites</a></li>
+          <li><a onclick="app.scrollToSection('suitesSection')">Nutrition &amp; Dining Lounge</a></li>
+          <li><a onclick="app.scrollToSection('suitesSection')">Airport Chauffeur Desk</a></li>
+          <li><a onclick="app.scrollToSection('suitesSection')">International Concierge</a></li>
+          <li><a onclick="app.openAuthModal('patient')">Patient Health Dossier</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Emergency 24x7</h4>
+        <p style="font-size: 0.88rem; color: white; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: #EF4444;"></i> 1800-999-000</p>
+        <p style="font-size: 0.85rem;">Ambulance dispatch in &lt; 15 mins</p>
+        <div style="margin-top: 1.2rem;">
+          <button class="btn-gold" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="app.openAuthModal('admin')">
+            <i class="fa-solid fa-lock"></i> Staff Gateway
+          </button>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.8rem; font-size: 0.8rem;">
+      &copy; Narendra Hospital &amp; Research Institute. All rights reserved. Registered under Clinical Establishments Act.
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * Narendra Hospital SPA Engine
+     * Pure ES6+ with localStorage persistence, dynamic view routers, and role security
+     */
+    const app = {
+      currentAuthRole: 'patient', // 'patient' or 'admin'
+      activeSession: null, // Holds logged in user object
+
+      // Default mock doctors data
+      doctors: [
+        {
+          id: 'DOC-1',
+          name: 'Dr. K. Narendra',
+          title: 'Senior Interventional Cardiologist',
+          dept: 'Cardiology',
+          degree: 'MD, DM (Cardio), FACC (USA)',
+          exp: '24+ Years Exp',
+          opdDays: 'Mon - Fri',
+          rating: '4.98'
+        },
+        {
+          id: 'DOC-2',
+          name: 'Dr. Sunita Varma',
+          title: 'Director of Neurosciences',
+          dept: 'Neurology',
+          degree: 'MCh (Neurosurgery), FINR (Zurich)',
+          exp: '19+ Years Exp',
+          opdDays: 'Mon - Sat',
+          rating: '4.95'
+        },
+        {
+          id: 'DOC-3',
+          name: 'Dr. Vikramaditya Roy',
+          title: 'Robotic Joint & Ortho Surgeon',
+          dept: 'Orthopedics',
+          degree: 'MS (Ortho), FRCS (Edin)',
+          exp: '16+ Years Exp',
+          opdDays: 'Tue - Sat',
+          rating: '4.92'
+        },
+        {
+          id: 'DOC-4',
+          name: 'Dr. Meera Iyer',
+          title: 'Chief Pediatric Intensivist',
+          dept: 'Pediatrics',
+          degree: 'MD (Ped), Fellowship Pediatric Critical Care',
+          exp: '14+ Years Exp',
+          opdDays: 'Mon - Fri',
+          rating: '4.99'
+        },
+        {
+          id: 'DOC-5',
+          name: 'Dr. Arvind Deshmukh',
+          title: 'Lead Surgical Oncologist',
+          dept: 'Oncology',
+          degree: 'MS, DNB (Surg Onco), ESMO Fellow',
+          exp: '21+ Years Exp',
+          opdDays: 'Wed - Sun',
+          rating: '4.96'
+        },
+        {
+          id: 'DOC-6',
+          name: 'Dr. Priyadarshini Sen',
+          title: 'Electrophysiologist & Cardiologist',
+          dept: 'Cardiology',
+          degree: 'MD, DM, FHRS',
+          exp: '12+ Years Exp',
+          opdDays: 'Tue - Sat',
+          rating: '4.91'
+        }
+      ],
+
+      beds: [
+        { ward: 'Presidential Suites', total: 12, occupied: 8, floor: 'Level 7' },
+        { ward: 'Deluxe Private Rooms', total: 60, occupied: 49, floor: 'Level 4 & 5' },
+        { ward: 'Cardiac ICU (CCU)', total: 24, occupied: 19, floor: 'Level 2' },
+        { ward: 'General Super-Care', total: 120, occupied: 94, floor: 'Level 3' }
+      ],
+
+      init() {
+        // Initialize localStorage defaults if not found
+        if (!localStorage.getItem('nh_appointments')) {
+          const sampleAppts = [
+            {
+              id: 'NH-2026-8801',
+              patientName: 'Rajesh Sharma',
+              phone: '+91 98765 12345',
+              dept: 'Cardiology',
+              doctorName: 'Dr. K. Narendra',
+              date: '2026-10-14',
+              slot: '09:30 AM',
+              mode: 'In-Person Hospital Visit',
+              status: 'confirmed',
+              notes: 'Follow-up post angiogram scan'
+            },
+            {
+              id: 'NH-2026-8802',
+              patientName: 'Ananya Deshmukh',
+              phone: '+91 98450 98765',
+              dept: 'Neurology',
+              doctorName: 'Dr. Sunita Varma',
+              date: '2026-10-15',
+              slot: '11:15 AM',
+              mode: 'VIP In-Suite Visit',
+              status: 'confirmed',
+              notes: 'Migraine consultation & MRI review'
+            },
+            {
+              id: 'NH-2026-8803',
+              patientName: 'Col. Sanjeev Kapoor',
+              phone: '+91 91234 56789',
+              dept: 'Orthopedics',
+              doctorName: 'Dr. Vikramaditya Roy',
+              date: '2026-10-12',
+              slot: '02:00 PM',
+              mode: 'In-Person Hospital Visit',
+              status: 'completed',
+              notes: 'Bilateral knee joint replacement review'
+            }
+          ];
+          localStorage.setItem('nh_appointments', JSON.stringify(sampleAppts));
+        }
+
+        // Restore active user session if exists
+        const savedSession = localStorage.getItem('nh_active_session');
+        if (savedSession) {
+          try {
+            this.activeSession = JSON.parse(savedSession);
+          } catch(e) {
+            this.activeSession = null;
+          }
+        }
+
+        // Render UI
+        this.renderDoctors('All');
+        this.populateBookingDoctors();
+        this.renderBedsTracker();
+        this.updateHeaderAuthButton();
+
+        // Default booking date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const yyyy = tomorrow.getFullYear();
+        const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        const dd = String(tomorrow.getDate()).padStart(2, '0');
+        const dateInput = document.getElementById('bookDate');
+        if (dateInput) dateInput.value = `${yyyy}-${mm}-${dd}`;
+
+        // If session was active, route directly
+        if (this.activeSession) {
+          if (this.activeSession.role === 'patient') {
+            this.showPatientDashboard();
+          } else if (this.activeSession.role === 'admin') {
+            this.showAdminDashboard();
+          }
+        }
+      },
+
+      renderDoctors(deptFilter) {
+        const container = document.getElementById('doctorsContainer');
+        if (!container) return;
+
+        const list = deptFilter === 'All' 
+          ? this.doctors 
+          : this.doctors.filter(d => d.dept.toLowerCase() === deptFilter.toLowerCase());
+
+        container.innerHTML = list.map(doc => `
+          <div class="doctor-card">
+            <div class="doctor-badge-dept">${doc.dept}</div>
+            <div class="doctor-avatar-box">
+              <i class="fa-solid fa-user-doctor"></i>
+              <div class="status-dot" title="Available On-Duty"></div>
+            </div>
+            <h3 class="doc-name">${doc.name}</h3>
+            <div class="doc-title">${doc.title}</div>
+            <div class="doc-meta"><i class="fa-solid fa-graduation-cap"></i> ${doc.degree}</div>
+            <div class="doc-meta"><i class="fa-solid fa-business-time"></i> ${doc.exp}</div>
+            <div class="doc-meta"><i class="fa-regular fa-calendar-check"></i> OPD: ${doc.opdDays}</div>
+            <div style="margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-amber);">
+                <i class="fa-solid fa-star"></i> ${doc.rating}
+              </span>
+              <button class="btn-gold" style="padding: 0.45rem 1rem; font-size: 0.8rem;" onclick="app.quickBookDoctor('${doc.name}', '${doc.dept}')">
+                <i class="fa-solid fa-calendar-plus"></i> Book Now
+              </button>
+            </div>
+          </div>
+        `).join('');
+      },
+
+      filterDoctors(dept) {
+        // Update filter button UI
+        const buttons = document.querySelectorAll('#deptFilterContainer .filter-btn');
+        buttons.forEach(btn => {
+          if (btn.textContent.trim().includes(dept) || (dept === 'All' && btn.textContent.trim() === 'All Specialties')) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+        this.renderDoctors(dept);
+      },
+
+      quickBookDoctor(docName, dept) {
+        this.showPublicView();
+        this.scrollToSection('bookingSection');
+        const deptSelect = document.getElementById('bookDeptSelect');
+        if (deptSelect) {
+          deptSelect.value = dept;
+          this.onBookingDeptChange();
+        }
+        setTimeout(() => {
+          const docSelect = document.getElementById('bookDoctorSelect');
+          if (docSelect) docSelect.value = docName;
+        }, 50);
+      },
+
+      populateBookingDoctors() {
+        const deptSelect = document.getElementById('bookDeptSelect');
+        const docSelect = document.getElementById('bookDoctorSelect');
+        if (!deptSelect || !docSelect) return;
+
+        const selectedDept = deptSelect.value;
+        docSelect.innerHTML = '<option value="">-- Choose Specialist --</option>';
+
+        const filtered = selectedDept 
+          ? this.doctors.filter(d => d.dept === selectedDept)
+          : this.doctors;
+
+        filtered.forEach(d => {
+          const opt = document.createElement('option');
+          opt.value = d.name;
+          opt.textContent = `${d.name} (${d.dept})`;
+          docSelect.appendChild(opt);
+        });
+      },
+
+      onBookingDeptChange() {
+        this.populateBookingDoctors();
+      },
+
+      selectSlotChip(chipEl) {
+        document.querySelectorAll('#slotChipsContainer .slot-chip').forEach(c => c.classList.remove('selected'));
+        chipEl.classList.add('selected');
+        document.getElementById('selectedSlotVal').value = chipEl.textContent.trim();
+      },
+
+      handleBookingSubmit(e) {
+        e.preventDefault();
+        const patientName = document.getElementById('bookPatientName').value.trim();
+        const phone = document.getElementById('bookPatientPhone').value.trim();
+        const dept = document.getElementById('bookDeptSelect').value;
+        const doctorName = document.getElementById('bookDoctorSelect').value;
+        const date = document.getElementById('bookDate').value;
+        const mode = document.getElementById('bookMode').value;
+        const slot = document.getElementById('selectedSlotVal').value;
+        const notes = document.getElementById('bookNotes').value.trim();
+
+        if (!patientName || !phone || !dept || !doctorName || !date) {
+          this.showToast('Please complete all required fields.', 'error');
+          return;
+        }
+
+        const newId = 'NH-2026-' + Math.floor(1000 + Math.random() * 9000);
+        const newAppointment = {
+          id: newId,
+          patientName,
+          phone,
+          dept,
+          doctorName,
+          date,
+          slot,
+          mode,
+          status: 'confirmed',
+          notes: notes || 'Direct Online Booking'
+        };
+
+        const existing = JSON.parse(localStorage.getItem('nh_appointments') || '[]');
+        existing.unshift(newAppointment);
+        localStorage.setItem('nh_appointments', JSON.stringify(existing));
+
+        // Form reset & celebratory feedback
+        document.getElementById('appointmentForm').reset();
+        this.selectSlotChip(document.querySelector('#slotChipsContainer .slot-chip'));
+        
+        this.showToast(`Appointment Confirmed! Reference ID: ${newId}`, 'success');
+
+        // If logged in as patient, update table immediately
+        if (this.activeSession && this.activeSession.role === 'patient') {
+          this.renderPatientAppointments();
+        }
+      },
+
+      openAuthModal(role = 'patient') {
+        this.switchAuthMode(role);
+        document.getElementById('authModal').classList.add('open');
+      },
+
+      closeAuthModal() {
+        document.getElementById('authModal').classList.remove('open');
+      },
+
+      switchAuthMode(role) {
+        this.currentAuthRole = role;
+        const patientTab = document.getElementById('toggleBtnPatient');
+        const adminTab = document.getElementById('toggleBtnAdmin');
+        const header = document.getElementById('authModalHeader');
+        const roleLabel = document.getElementById('demoRoleName');
+        const credLabel = document.getElementById('demoCredText');
+
+        if (role === 'patient') {
+          patientTab.classList.add('active');
+          adminTab.classList.remove('active');
+          header.textContent = 'Patient Portal';
+          roleLabel.textContent = 'Patient Demo Account:';
+          credLabel.textContent = 'patient@narendra.com / patient123';
+        } else {
+          adminTab.classList.add('active');
+          patientTab.classList.remove('active');
+          header.textContent = 'Staff / Admin Gate';
+          roleLabel.textContent = 'Executive Admin Demo:';
+          credLabel.textContent = 'admin@narendra.com / admin123';
+        }
+      },
+
+      fillDemoCredentials() {
+        if (this.currentAuthRole === 'patient') {
+          document.getElementById('authEmail').value = 'patient@narendra.com';
+          document.getElementById('authPassword').value = 'patient123';
+        } else {
+          document.getElementById('authEmail').value = 'admin@narendra.com';
+          document.getElementById('authPassword').value = 'admin123';
+        }
+      },
+
+      togglePasswordVisibility(inputId, btn) {
+        const field = document.getElementById(inputId);
+        const icon = btn.querySelector('i');
+        if (field.type === 'password') {
+          field.type = 'text';
+          icon.className = 'fa-regular fa-eye-slash';
+        } else {
+          field.type = 'password';
+          icon.className = 'fa-regular fa-eye';
+        }
+      },
+
+      handleAuthSubmit(e) {
+        e.preventDefault();
+        const email = document.getElementById('authEmail').value.trim();
+        const pass = document.getElementById('authPassword').value.trim();
+        const form = document.getElementById('authForm');
+
+        if (this.currentAuthRole === 'patient') {
+          if (email === 'patient@narendra.com' && pass === 'patient123') {
+            this.activeSession = {
+              role: 'patient',
+              name: 'Rajesh Sharma',
+              email: email,
+              uhid: 'NH-P-77401'
+            };
+            this.onAuthSuccess('Welcome back, Rajesh Sharma');
+            this.showPatientDashboard();
+          } else {
+            this.triggerAuthError(form, 'Invalid Patient credentials. Click "Auto-Fill" for demo.');
+          }
+        } else {
+          if (email === 'admin@narendra.com' && pass === 'admin123') {
+            this.activeSession = {
+              role: 'admin',
+              name: 'Dr. A. V. Rao',
+              email: email,
+              roleTitle: 'Chief Medical Superintendent'
+            };
+            this.onAuthSuccess('Authorized as Medical Administrator');
+            this.showAdminDashboard();
+          } else {
+            this.triggerAuthError(form, 'Invalid Admin credentials. Click "Auto-Fill" for demo.');
+          }
+        }
+      },
+
+      onAuthSuccess(msg) {
+        localStorage.setItem('nh_active_session', JSON.stringify(this.activeSession));
+        this.closeAuthModal();
+        this.showToast(msg, 'success');
+        this.updateHeaderAuthButton();
+      },
+
+      triggerAuthError(formElement, errorMsg) {
+        formElement.classList.add('shake-error');
+        this.showToast(errorMsg, 'error');
+        setTimeout(() => {
+          formElement.classList.remove('shake-error');
+        }, 500);
+      },
+
+      logoutUser() {
+        this.activeSession = null;
+        localStorage.removeItem('nh_active_session');
+        this.showToast('You have been logged out securely.', 'info');
+        this.updateHeaderAuthButton();
+        this.showPublicView();
+      },
+
+      updateHeaderAuthButton() {
+        const container = document.getElementById('authNavContainer');
+        if (!container) return;
+
+        if (!this.activeSession) {
+          container.innerHTML = `
+            <button class="btn-outline-teal" onclick="app.openAuthModal('patient')">
+              <i class="fa-regular fa-circle-user"></i> Portal Login
+            </button>
+          `;
+        } else if (this.activeSession.role === 'patient') {
+          container.innerHTML = `
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button class="btn-gold" style="padding: 0.5rem 1rem; font-size: 0.82rem;" onclick="app.showPatientDashboard()">
+                <i class="fa-solid fa-user-circle"></i> My Dossier
+              </button>
+              <button onclick="app.logoutUser()" title="Logout" style="background: none; border: none; color: var(--text-slate); cursor: pointer; font-size: 1.1rem; padding: 4px;">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </button>
+            </div>
+          `;
+        } else {
+          container.innerHTML = `
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button class="btn-gold" style="padding: 0.5rem 1rem; font-size: 0.82rem;" onclick="app.showAdminDashboard()">
+                <i class="fa-solid fa-shield-halved"></i> Staff Center
+              </button>
+              <button onclick="app.logoutUser()" title="Logout" style="background: none; border: none; color: var(--text-slate); cursor: pointer; font-size: 1.1rem; padding: 4px;">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </button>
+            </div>
+          `;
+        }
+      },
+
+      showPublicView() {
+        document.getElementById('publicViewContainer').style.display = 'block';
+        document.getElementById('patientDashboard').classList.remove('active');
+        document.getElementById('adminDashboard').classList.remove('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      showPatientDashboard() {
+        document.getElementById('publicViewContainer').style.display = 'none';
+        document.getElementById('adminDashboard').classList.remove('active');
+        const pDash = document.getElementById('patientDashboard');
+        pDash.classList.add('active');
+
+        if (this.activeSession) {
+          document.getElementById('patientWelcomeText').textContent = `Welcome back, ${this.activeSession.name}`;
+        }
+        this.renderPatientAppointments();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      showAdminDashboard() {
+        document.getElementById('publicViewContainer').style.display = 'none';
+        document.getElementById('patientDashboard').classList.remove('active');
+        const aDash = document.getElementById('adminDashboard');
+        aDash.classList.add('active');
+
+        this.renderAdminAppointments();
+        this.renderBedsTracker();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      renderPatientAppointments() {
+        const tbody = document.getElementById('patientAppointmentsTableBody');
+        if (!tbody) return;
+
+        const appointments = JSON.parse(localStorage.getItem('nh_appointments') || '[]');
+        if (appointments.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 2rem; color: var(--text-slate);">No appointments scheduled yet.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = appointments.map(apt => `
+          <tr>
+            <td><strong>${apt.id}</strong></td>
+            <td>
+              <div style="font-weight: 700; color: var(--primary);">${apt.doctorName}</div>
+              <span style="font-size: 0.78rem; color: var(--text-slate);">${apt.dept}</span>
+            </td>
+            <td>
+              <div><i class="fa-regular fa-calendar"></i> ${apt.date}</div>
+              <span style="font-size: 0.78rem; color: var(--accent-amber); font-weight: 700;">${apt.slot}</span>
+            </td>
+            <td><span style="font-size: 0.82rem;">${apt.mode}</span></td>
+            <td><span class="badge-status ${apt.status}">${apt.status.toUpperCase()}</span></td>
+            <td>
+              ${apt.status !== 'cancelled' ? `
+                <button class="btn-outline-teal" style="padding: 4px 10px; font-size: 0.76rem; border-color: #EF4444; color: #EF4444;" onclick="app.cancelAppointment('${apt.id}')">
+                  <i class="fa-solid fa-xmark"></i> Cancel
+                </button>
+              ` : '<span style="color: var(--text-muted); font-size: 0.8rem;">Cancelled</span>'}
+            </td>
+          </tr>
+        `).join('');
+      },
+
+      renderAdminAppointments() {
+        const tbody = document.getElementById('adminAppointmentsTableBody');
+        if (!tbody) return;
+
+        const appointments = JSON.parse(localStorage.getItem('nh_appointments') || '[]');
+        
+        // Update admin KPIs
+        const countEl = document.getElementById('kpiAppointmentsCount');
+        if (countEl) countEl.textContent = appointments.length;
+
+        tbody.innerHTML = appointments.map(apt => `
+          <tr>
+            <td><strong style="color: var(--primary);">${apt.id}</strong></td>
+            <td>
+              <div style="font-weight: 700;">${apt.patientName}</div>
+              <div style="font-size: 0.78rem; color: var(--text-slate);">${apt.phone}</div>
+            </td>
+            <td>
+              <div>${apt.doctorName}</div>
+              <div style="font-size: 0.78rem; color: var(--text-slate);">${apt.dept}</div>
+            </td>
+            <td>
+              <div>${apt.date}</div>
+              <strong style="color: var(--primary-light); font-size: 0.82rem;">${apt.slot}</strong>
+            </td>
+            <td><span class="badge-status ${apt.status}">${apt.status.toUpperCase()}</span></td>
+            <td>
+              <div style="display: flex; gap: 6px;">
+                <button class="btn-outline-teal" style="padding: 4px 8px; font-size: 0.74rem;" onclick="app.changeAppointmentStatus('${apt.id}', 'confirmed')" title="Confirm">
+                  <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="btn-outline-teal" style="padding: 4px 8px; font-size: 0.74rem; border-color: #10B981; color: #10B981;" onclick="app.changeAppointmentStatus('${apt.id}', 'completed')" title="Complete">
+                  <i class="fa-solid fa-circle-check"></i>
+                </button>
+                <button class="btn-outline-teal" style="padding: 4px 8px; font-size: 0.74rem; border-color: #EF4444; color: #EF4444;" onclick="app.changeAppointmentStatus('${apt.id}', 'cancelled')" title="Cancel">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      },
+
+      changeAppointmentStatus(id, newStatus) {
+        const appointments = JSON.parse(localStorage.getItem('nh_appointments') || '[]');
+        const target = appointments.find(a => a.id === id);
+        if (target) {
+          target.status = newStatus;
+          localStorage.setItem('nh_appointments', JSON.stringify(appointments));
+          this.renderAdminAppointments();
+          this.renderPatientAppointments();
+          this.showToast(`Appointment ${id} status set to ${newStatus.toUpperCase()}`, 'success');
+        }
+      },
+
+      cancelAppointment(id) {
+        this.changeAppointmentStatus(id, 'cancelled');
+      },
+
+      filterAdminTable() {
+        const term = document.getElementById('adminSearchInput').value.toLowerCase();
+        const rows = document.querySelectorAll('#adminTable tbody tr');
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          row.style.display = text.includes(term) ? '' : 'none';
+        });
+      },
+
+      // Bed Telemetry & Fast-track Admit
+      renderBedsTracker() {
+        const container = document.getElementById('bedCardsContainer');
+        if (!container) return;
+
+        let totalBeds = 0;
+        let totalOccupied = 0;
+
+        container.innerHTML = this.beds.map(b => {
+          totalBeds += b.total;
+          totalOccupied += b.occupied;
+          const pct = Math.round((b.occupied / b.total) * 100);
+          const vacant = b.total - b.occupied;
+          return `
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1.2rem; border-radius: var(--radius-md);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <strong style="color: var(--primary); font-size: 0.95rem;">${b.ward}</strong>
+                <span style="font-size: 0.72rem; color: var(--text-slate);">${b.floor}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.4rem;">
+                <span>Occupied: ${b.occupied}/${b.total}</span>
+                <span style="font-weight: 700; color: ${vacant <= 2 ? 'var(--danger)' : 'var(--success)'};">${vacant} Vacant</span>
+              </div>
+              <div style="background: #E2E8F0; height: 8px; border-radius: 99px; overflow: hidden;">
+                <div style="background: ${pct > 85 ? 'var(--danger)' : 'var(--primary-light)'}; height: 100%; width: ${pct}%;"></div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        const freeCountEl = document.getElementById('kpiBedsFreeCount');
+        const occPctEl = document.getElementById('kpiBedOccupancy');
+        if (freeCountEl) freeCountEl.textContent = (totalBeds - totalOccupied);
+        if (occPctEl) occPctEl.textContent = `${Math.round((totalOccupied / totalBeds) * 100)}%`;
+      },
+
+      openAdmitModal() {
+        document.getElementById('admitModal').classList.add('open');
+      },
+
+      closeAdmitModal() {
+        document.getElementById('admitModal').classList.remove('open');
+      },
+
+      handleAdmitPatientSubmit(e) {
+        e.preventDefault();
+        const pName = document.getElementById('admitName').value;
+        const cat = document.getElementById('admitCategory').value;
+
+        // Increase occupancy in chosen bed
+        const bedItem = this.beds.find(b => b.ward.includes(cat.split(' ')[0]));
+        if (bedItem && bedItem.occupied < bedItem.total) {
+          bedItem.occupied += 1;
+        }
+
+        this.renderBedsTracker();
+        this.closeAdmitModal();
+        this.showToast(`Patient ${pName} admitted to ${cat}. Bed allocated!`, 'success');
+        document.getElementById('admitName').value = '';
+        document.getElementById('admitDoctor').value = '';
+      },
+
+      // Concierge & Hospitality Actions
+      triggerConciergeRequest(message) {
+        this.showToast(message, 'info');
+      },
+
+      requestSuiteTour(suiteName) {
+        this.showToast(`Concierge informed: Brochure & private virtual tour prepared for ${suiteName}.`, 'success');
+      },
+
+      viewDummyReport(reportName) {
+        this.showToast(`Decrypted & loading "${reportName}" medical dossier viewer...`, 'info');
+      },
+
+      // Utilities & UI Helpers
+      scrollToSection(secId) {
+        const el = document.getElementById(secId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      },
+
+      toggleMobileMenu() {
+        document.getElementById('navLinks').classList.toggle('mobile-open');
+      },
+
+      showToast(message, type = 'info') {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = 'toast-item';
+        
+        let iconHtml = '<i class="fa-solid fa-circle-check" style="color: var(--accent-gold); font-size: 1.2rem;"></i>';
+        if (type === 'error') {
+          iconHtml = '<i class="fa-solid fa-circle-exclamation" style="color: #EF4444; font-size: 1.2rem;"></i>';
+        } else if (type === 'info') {
+          iconHtml = '<i class="fa-solid fa-bell-concierge" style="color: var(--accent-gold); font-size: 1.2rem;"></i>';
+        }
+
+        toast.innerHTML = `
+          ${iconHtml}
+          <div style="font-size: 0.88rem; flex-grow: 1;">${message}</div>
+        `;
+
+        container.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(10px)';
+          toast.style.transition = 'all 0.3s ease';
+          setTimeout(() => toast.remove(), 300);
+        }, 4000);
+      }
+    };
+
+    // Run engine on window load
+    window.addEventListener('DOMContentLoaded', () => {
+      app.init();
+    });
+  </script>
+</body>
+</html>
